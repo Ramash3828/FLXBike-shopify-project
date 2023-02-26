@@ -1,0 +1,84 @@
+<div class="services">
+  <div class="page-width">
+    <div class="services__content">
+      <a href="#" class="services__item">
+        <div class="services__item-img">
+          <img src="{{ 'shipping-icon.png' | asset_url }}" alt="">
+        </div>
+        <p class="services__text">FREE SHIPPING</p>
+      </a>
+      <a href="#" class="services__item">
+        <div class="services__item-img">
+          <img src="{{ 'warenty-icon.png' | asset_url }}" alt="">
+        </div>
+        <p class="services__text">1 YEAR WARRANTY</p>
+      </a>
+      <a href="#" class="services__item">
+        <div class="services__item-img">
+          <img src="{{ 'support-icon.png' | asset_url }}" alt="">
+        </div>
+        <p class="services__text">TOP RATED SUPPORT</p>
+      </a>
+      <a href="#" class="services__item">
+        <div class="services__item-img">
+          <img src="{{ 'finance-icon.png' | asset_url }}" alt="">
+        </div>
+        <p class="services__text">FINANCING OPTIONS</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Services"
+    },
+    "settings": [],
+    "presets": [
+      {
+        "name": "Services"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .services {
+    padding: 48px 0;
+    background: rgba(236, 32, 39, 0.05);
+    margin-bottom: 30px;
+  }
+  .services__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services__item {
+    text-align: center;
+    padding: 15px 0;
+  }
+  .services__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #010101;
+  }
+
+  @media screen and (max-width: 768px) {
+    .services__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services__item-img img {
+      width: 100%;
+    }
+
+  }
+</style>

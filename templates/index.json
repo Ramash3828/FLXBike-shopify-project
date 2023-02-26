@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {}
+        },
+        "column2": {
+          "type": "column",
+          "settings": {}
+        },
+        "column3": {
+          "type": "column",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "73c54241-0309-40b5-a4fe-5b9809af1ea4": {
+      "type": "hero-content",
+      "settings": {}
+    },
+    "32cfacc0-a3aa-4966-b0ab-59b357fe5533": {
+      "type": "featured-brand",
+      "settings": {}
+    },
+    "9ba4e5ac-4e05-4358-82bf-5895b174025c": {
+      "type": "services",
+      "settings": {}
+    },
+    "89ed4064-604c-4d9f-894b-d5d92e897417": {
+      "type": "product-review",
+      "settings": {}
+    },
+    "4d00f8df-bcb0-43bb-8085-4298ceda3eba": {
+      "type": "product-review",
+      "settings": {}
+    },
+    "af8902bf-552d-4d4d-8403-53f6ff4c6276": {
+      "type": "banner",
+      "settings": {}
+    },
+    "e1be23cc-952c-4b98-8fbc-4e52c6c7d29e": {
+      "type": "customer-reviews",
+      "settings": {}
+    },
+    "ae116356-46a9-494a-b086-b5d8694e3ea7": {
+      "type": "adventure",
+      "settings": {}
+    },
+    "d1183706-c2a4-4214-8ac4-e73b2306c03d": {
+      "type": "stelth-ebike",
+      "settings": {}
+    },
+    "056bcf12-43ff-4aba-947d-46cf52cbe40a": {
+      "type": "riding-style",
+      "settings": {}
+    },
+    "6e7b1c52-920e-4834-9207-cb19e4cdbf2d": {
+      "type": "community",
+      "settings": {}
+    }
+  },
+  "order": [
+    "multicolumn",
+    "73c54241-0309-40b5-a4fe-5b9809af1ea4",
+    "32cfacc0-a3aa-4966-b0ab-59b357fe5533",
+    "9ba4e5ac-4e05-4358-82bf-5895b174025c",
+    "89ed4064-604c-4d9f-894b-d5d92e897417",
+    "4d00f8df-bcb0-43bb-8085-4298ceda3eba",
+    "af8902bf-552d-4d4d-8403-53f6ff4c6276",
+    "e1be23cc-952c-4b98-8fbc-4e52c6c7d29e",
+    "ae116356-46a9-494a-b086-b5d8694e3ea7",
+    "d1183706-c2a4-4214-8ac4-e73b2306c03d",
+    "056bcf12-43ff-4aba-947d-46cf52cbe40a",
+    "6e7b1c52-920e-4834-9207-cb19e4cdbf2d"
+  ]
+}

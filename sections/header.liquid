@@ -1,0 +1,490 @@
+{% liquid
+  assign header_logo = section.settings.header_logo
+%}
+
+<nav class="nav">
+  <div class="nav__content content-width">
+    <div class="nav__toggle-menu">
+      <ul class="nav__menu">
+        <li class="nav__item nav-heading">
+          <div class="sidebar">
+            <div class="nav__toggle-close">
+              <img src="{{ 'close-icon.svg' | asset_url }}" alt="">
+            </div>
+
+
+
+            <p class="user-acc-box">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8 10C10.2091 10 12 8.20914 12 6C12 3.79086 10.2091 2 8 2C5.79086 2 4 3.79086 4 6C4 8.20914 5.79086 10 8 10Z"
+                  stroke="#010101"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M1.9375 13.5001C2.55184 12.4358 3.43552 11.552 4.49972 10.9375C5.56392 10.323 6.77113 9.99951 8 9.99951C9.22887 9.99951 10.4361 10.323 11.5003 10.9375C12.5645 11.552 13.4482 12.4358 14.0625 13.5001"
+                  stroke="#010101"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              ACCOUNT
+            </p>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Ebikes</a>
+          <div class="nav__item-icon">
+            {% render 'angle-down-icon' %}
+          </div>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Accesories</a>
+          <div class="nav__item-icon">
+            {% render 'angle-down-icon' %}
+          </div>
+        </li>
+        <li class="nav__item nav__item--logo">
+          <a class="nav__link" href="#">
+            <img src="{{ section.settings.header_logo | img_url: 'master' }}" alt="logo">
+          </a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./contact.html">About</a>
+          <div class="nav__item-icon">
+            {% render 'angle-down-icon' %}
+          </div>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./contact.html">Support</a>
+          <div class="nav__item-icon">
+            {% render 'angle-down-icon' %}
+          </div>
+        </li>
+        <li class="nav__item nav__item--demo">
+          <a class="nav__link" href="#">Shedule virtual ebike demo</a>
+
+        </li>
+        <div class="icon-box">
+          <div class="icon-item">
+            {% render 'search' %}
+            <p class="icon-text">Search</p>
+          </div>
+          <div class="icon-item">
+            {% render 'user-icon' %}
+            <p class="icon-text">Account</p>
+          </div>
+          <div class="icon-item">
+            {% render 'shopping-cart' %}
+            <p class="icon-text">Cart</p>
+          </div>
+        </div>
+
+      </ul>
+      {% comment %} Mobile nav bar {% endcomment %}
+
+      <div class="nav-bar__icon-content">
+        <h4 class="nav-bar__icon-title">FOLLOW US</h4>
+        <div class="nav-bar__icon-box">
+          <a class="nav-bar__icon-link" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.01562 3.40186C5.01562 3.40186 3.42188 5.02686 3.42188 6.99561C3.42188 8.99561 5.01562 10.5894 7.01562 10.5894C8.98438 10.5894 10.6094 8.99561 10.6094 6.99561C10.6094 5.02686 8.98438 3.40186 7.01562 3.40186ZM7.01562 9.33936C5.73438 9.33936 4.67188 8.30811 4.67188 6.99561C4.67188 5.71436 5.70312 4.68311 7.01562 4.68311C8.29688 4.68311 9.32812 5.71436 9.32812 6.99561C9.32812 8.30811 8.29688 9.33936 7.01562 9.33936ZM11.5781 3.27686C11.5781 3.74561 11.2031 4.12061 10.7344 4.12061C10.2656 4.12061 9.89062 3.74561 9.89062 3.27686C9.89062 2.80811 10.2656 2.43311 10.7344 2.43311C11.2031 2.43311 11.5781 2.80811 11.5781 3.27686ZM13.9531 4.12061C13.8906 2.99561 13.6406 1.99561 12.8281 1.18311C12.0156 0.370605 11.0156 0.120605 9.89062 0.0581055C8.73438 -0.00439453 5.26562 -0.00439453 4.10938 0.0581055C2.98438 0.120605 2.01562 0.370605 1.17188 1.18311C0.359375 1.99561 0.109375 2.99561 0.046875 4.12061C-0.015625 5.27686 -0.015625 8.74561 0.046875 9.90186C0.109375 11.0269 0.359375 11.9956 1.17188 12.8394C2.01562 13.6519 2.98438 13.9019 4.10938 13.9644C5.26562 14.0269 8.73438 14.0269 9.89062 13.9644C11.0156 13.9019 12.0156 13.6519 12.8281 12.8394C13.6406 11.9956 13.8906 11.0269 13.9531 9.90186C14.0156 8.74561 14.0156 5.27686 13.9531 4.12061ZM12.4531 11.1206C12.2344 11.7456 11.7344 12.2144 11.1406 12.4644C10.2031 12.8394 8.01562 12.7456 7.01562 12.7456C5.98438 12.7456 3.79688 12.8394 2.89062 12.4644C2.26562 12.2144 1.79688 11.7456 1.54688 11.1206C1.17188 10.2144 1.26562 8.02686 1.26562 6.99561C1.26562 5.99561 1.17188 3.80811 1.54688 2.87061C1.79688 2.27686 2.26562 1.80811 2.89062 1.55811C3.79688 1.18311 5.98438 1.27686 7.01562 1.27686C8.01562 1.27686 10.2031 1.18311 11.1406 1.55811C11.7344 1.77686 12.2031 2.27686 12.4531 2.87061C12.8281 3.80811 12.7344 5.99561 12.7344 6.99561C12.7344 8.02686 12.8281 10.2144 12.4531 11.1206Z" fill="#010101" />
+            </svg>
+          </a>
+          <a class="nav-bar__icon-link" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 9 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.03125 9.01123L8.46875 6.13623H5.6875V4.26123C5.6875 3.44873 6.0625 2.69873 7.3125 2.69873H8.59375V0.22998C8.59375 0.22998 7.4375 0.0112305 6.34375 0.0112305C4.0625 0.0112305 2.5625 1.41748 2.5625 3.91748V6.13623H0V9.01123H2.5625V16.0112H5.6875V9.01123H8.03125Z" fill="#010101" />
+            </svg>
+          </a>
+          <a class="nav-bar__icon-link" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 18 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.3125 1.91748C17.125 1.16748 16.5312 0.57373 15.8125 0.38623C14.4688 0.0112305 9.15625 0.0112305 9.15625 0.0112305C9.15625 0.0112305 3.8125 0.0112305 2.46875 0.38623C1.75 0.57373 1.15625 1.16748 0.96875 1.91748C0.59375 3.22998 0.59375 6.04248 0.59375 6.04248C0.59375 6.04248 0.59375 8.82373 0.96875 10.1675C1.15625 10.9175 1.75 11.48 2.46875 11.6675C3.8125 12.0112 9.15625 12.0112 9.15625 12.0112C9.15625 12.0112 14.4688 12.0112 15.8125 11.6675C16.5312 11.48 17.125 10.9175 17.3125 10.1675C17.6875 8.82373 17.6875 6.04248 17.6875 6.04248C17.6875 6.04248 17.6875 3.22998 17.3125 1.91748ZM7.40625 8.57373V3.51123L11.8438 6.04248L7.40625 8.57373Z" fill="#010101" />
+            </svg>
+          </a>
+          <a class="nav-bar__icon-link" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 17 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.0312 3.74561C15.0312 3.90186 15.0312 4.02686 15.0312 4.18311C15.0312 8.52686 11.75 13.4956 5.71875 13.4956C3.84375 13.4956 2.125 12.9644 0.6875 12.0269C0.9375 12.0581 1.1875 12.0894 1.46875 12.0894C3 12.0894 4.40625 11.5581 5.53125 10.6831C4.09375 10.6519 2.875 9.71436 2.46875 8.40186C2.6875 8.43311 2.875 8.46436 3.09375 8.46436C3.375 8.46436 3.6875 8.40186 3.9375 8.33936C2.4375 8.02686 1.3125 6.71436 1.3125 5.12061V5.08936C1.75 5.33936 2.28125 5.46436 2.8125 5.49561C1.90625 4.90186 1.34375 3.90186 1.34375 2.77686C1.34375 2.15186 1.5 1.58936 1.78125 1.12061C3.40625 3.08936 5.84375 4.40186 8.5625 4.55811C8.5 4.30811 8.46875 4.05811 8.46875 3.80811C8.46875 1.99561 9.9375 0.526855 11.75 0.526855C12.6875 0.526855 13.5312 0.901855 14.1562 1.55811C14.875 1.40186 15.5938 1.12061 16.2188 0.745605C15.9688 1.52686 15.4688 2.15186 14.7812 2.55811C15.4375 2.49561 16.0938 2.30811 16.6562 2.05811C16.2188 2.71436 15.6562 3.27686 15.0312 3.74561Z" fill="#010101" />
+            </svg>
+          </a>
+          <a class="nav-bar__icon-link" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 15 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.6562 6.5625C13.25 6.59375 11.9375 6.15625 10.8125 5.34375V10.9375C10.8125 14.8438 6.5625 17.2812 3.1875 15.3438C-0.1875 13.375 -0.1875 8.5 3.1875 6.53125C4.15625 5.96875 5.3125 5.75 6.4375 5.90625V8.71875C4.71875 8.15625 3.0625 9.6875 3.4375 11.4375C3.84375 13.1875 5.96875 13.875 7.3125 12.6562C7.78125 12.2188 8.0625 11.5938 8.0625 10.9375V0H10.8125C10.8125 0.25 10.8125 0.46875 10.875 0.71875C11.0625 1.75 11.6562 2.65625 12.5625 3.21875C13.1562 3.625 13.9062 3.84375 14.6562 3.84375V6.5625Z" fill="#010101" />
+            </svg>
+          </a>
+        </div>
+        <div class="nav-bar__contact-box">
+          <span class="ac-bar__contact-box-text">Need Help?</span>
+          <span class="ac-bar__contact-box-number nav-bar__contact-box--number ">901-602-4877</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-nav-bar">
+      <div class="btn-text-box">
+        <div class="nav__toggle-btn">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        MENU
+      </div>
+
+      <div class="mobile-logo">
+        <a class="" href="#">
+          <img src="{{ section.settings.header_logo | img_url: 'master' }}" alt="logo">
+        </a>
+      </div>
+      <div class="icon-box-mobile">
+        <div class="icon-item">
+          {% render 'search' %}
+          <p class="icon-text">Search</p>
+        </div>
+
+        <div class="icon-item icon-item-cart">
+          {% render 'shopping-cart' %}
+          <p class="icon-text">Cart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+                                                                                                                                                                                                                                                                                                                                                                                                              "@type": "Organization",
+                                                                                                                                                                                                                                                                                                                                                                                                              "name": {{ shop.name | json }},
+  {% if section.settings.logo %}
+    "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+  {% endif %}
+  "sameAs": [
+  {{ settings.social_twitter_link | json }},
+  {{ settings.social_facebook_link | json }},
+  {{ settings.social_pinterest_link | json }},
+  {{ settings.social_instagram_link | json }},
+  {{ settings.social_tiktok_link | json }},
+  {{ settings.social_tumblr_link | json }},
+  {{ settings.social_snapchat_link | json }},
+  {{ settings.social_youtube_link | json }},
+  {{ settings.social_vimeo_link | json }}
+  ],
+  "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+  <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "@type": "WebSite",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "name": {{ shop.name | json }},
+    "potentialAction": {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "@type": "SearchAction",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            "target": {{ potential_action_target | json }},
+    "query-input": "required name=search_term_string"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          },
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "t:sections.header.name",
+    "tag": "div",
+    "class": "header__inner",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_sticky_header",
+        "default": true,
+        "label": "t:sections.header.settings.enable_sticky_header.label",
+        "info": "t:sections.header.settings.enable_sticky_header.info"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.spacing"
+      }, {
+        "type": "image_picker",
+        "id": "header_logo",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  .nav__toggle-menu {
+    position: relative;
+  }
+  .mobile-nav-bar,
+  .nav-heading,
+  .icon-box-mobile {
+    display: none;
+  }
+  .icon-box {
+    position: absolute;
+    left: 107%;
+  }
+  @media(max-width: 768px) {
+    .nav-heading {
+      display: block;
+    }
+    .sidebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px;
+    }
+
+    .nav__content.content-width {
+      width: 80%;
+      justify-content: flex-start;
+      margin: 0;
+    }
+
+    .nav {
+      padding: 15px 0;
+      top: 50px;
+      position: absolute;
+    }
+    .nav__toggle-btn {
+      display: inline-flex;
+      z-index: 222;
+    }
+
+
+    .nav .nav__toggle-menu {
+      position: absolute;
+      background-color: #fff;
+      height: 800px;
+      width: 73%;
+      top: 0;
+      left: -100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+      z-index: 1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav__menu {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 0;
+    }
+    .nav__item {
+      width: 100%;
+      border-top: 1px solid #010101;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__item:last-child {
+      border-bottom: 1px solid #010101;
+    }
+
+    .nav__link {
+      display: block;
+      text-align: left;
+      color: #010101;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: 2px;
+      padding: 20px 15px;
+
+    }
+
+    .nav__item--logo {
+      display: none;
+    }
+    .nav__item-icon {
+      display: block;
+      padding: 10px 30px;
+      border-left: 1px solid #010101;
+    }
+    .nav__item--demo {
+      display: block;
+      border-bottom: 1px solid #010101;
+    }
+
+    .user-acc-box {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    {% comment %}
+      ICON BOX{% endcomment %}
+
+    .nav-bar__icon-content {
+      margin: 10px 0;
+    }
+
+    .nav-bar__icon-title {
+      display: block;
+      text-align: left;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 1px;
+      color: #000000;
+      margin-bottom: 15px;
+      margin-left: 8%;
+    }
+    .nav-bar__icon-box {
+      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: 8%;
+      margin-bottom: 15px;
+    }
+
+    .nav-bar__icon-link {
+      padding: 8px 23px;
+      border: 1px solid #010101;
+    }
+
+    .nav-bar__contact-box {
+      padding: 30px 40px;
+      display: block;
+      background-color: #010101;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .icon-box {
+      display: none;
+    }
+    .icon-box-mobile {
+      display: block;
+    }
+
+
+    .mobile-nav-bar {
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px 15px;
+      margin-top: -15px;
+      z-index: -1;
+    }
+
+    .icon-box-mobile {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-text-box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      font-weight: 700;
+      font-size: 9px;
+      line-height: 9px;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #FFFFFF;
+      opacity: 0.8;
+    }
+
+
+  }
+</style>
+
+<script>
+  // Toggle Menu bar------------------
+  const toggle = document.querySelector('.nav__toggle-btn');
+  const toggleClose = document.querySelector('.nav__toggle-close');
+  const menu = document.querySelector('.nav');
+  const navLink = document.querySelectorAll('.nav__link');
+  const nav__toggle = document.querySelector('.nav__toggle-menu');
+  toggle.onclick = function() {
+    menu.classList.toggle('active');
+    if (menu.classList[1] == 'active') {
+      nav__toggle.style.left = `0px`;
+    } else {
+      nav__toggle.style.left = `-100%`;
+    }
+  };
+  toggleClose.onclick = function() {
+    menu.classList.toggle('active');
+    if (menu.classList[1] == 'active') {
+      nav__toggle.style.left = `0px`;
+    } else {
+      nav__toggle.style.left = `-100%`;
+    }
+  };
+
+// Change background color
+  window.addEventListener("scroll", function() {
+    const position = window.pageYOffset;
+
+
+    if (position > 10) {
+      menu.style.backgroundColor = `#333`;{% comment %}navLink.forEach((item) => {
+          item.style.paddingTop = "15px";
+          item.style.paddingBottom = "15px";
+        });{% endcomment %}
+
+// document.querySelector(".scroll-top").style.display = "block";
+    } else {
+      menu.style.backgroundColor = `transparent`;{% comment %}navLink.forEach((item) => {
+          item.style.paddingTop = "30px";
+          item.style.paddingBottom = "30px";
+        });{% endcomment %}
+
+// document.querySelector(".scroll-top").style.display = "none";
+    }
+  });
+</script>

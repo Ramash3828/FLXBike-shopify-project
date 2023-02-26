@@ -1,0 +1,89 @@
+{% liquid
+  assign show_announcement = section.settings.show_announcement
+  assign phone_number = section.settings.phone_number
+  assign text = section.settings.text
+  assign show_social = section.settings.show_social
+%}
+
+{% if show_announcement %}
+  <div class="announcement__inner">
+    <div class="anc-bar">
+      {% if phone_number != '' %}
+        <div class="ac-bar__contact-box">
+          <span class="ac-bar__contact-box-text">Need Help?</span>
+          <span class="ac-bar__contact-box-number">{{ phone_number }}</span>
+        </div>
+      {% endif %}
+
+      {% if text != '' %}
+        <div class="ac-bar__middle">
+          {{ text | replace: '<a', '<a class="shop-now-btn"' | replace: '<p', '<p class="ac-bar__text"' }}
+        </div>
+      {% endif %}
+      {% if show_social %}
+        <div class="ac-bar__icon-box">
+          <a href="#">{% render 'instagram' %}</a>
+          <a href="#">{% render 'facebook' %}</a>
+          <a href="#">{% render 'youtube' %}</a>
+          <a href="#">{% render 'twitter' %}</a>
+          <a href="#">{% render 'tiktok' %}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "default": true,
+        "label": "Show announcement"
+      }, {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Phone Number",
+        "default": "901-602-4877"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Don't want? Keep blank."
+      }, {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": true,
+        "label": "Show Social"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  @media(max-width: 768px) {
+    .anc-bar {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+      grid-row-gap: 14px;
+    }
+    .ac-bar__contact-box {
+      display: none;
+    }
+    .ac-bar__text {
+      font-size: 12px;
+
+    }
+
+    .ac-bar__middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ac-bar__icon-box {
+      display: none;
+    }
+  }
+</style>

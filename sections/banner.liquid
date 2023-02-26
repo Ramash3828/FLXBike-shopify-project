@@ -1,0 +1,156 @@
+{% liquid
+  assign img = section.settings.img
+%}
+
+<div class="banner">
+  <div class="page-width">
+    <div class="banner__img-box">
+      <img
+        class="banner__img"
+        src="{{ img | img_url: 'master' }}"
+        alt="banner image">
+      <img
+        class="banner__img-mobile"
+        src="{{ 'banner-img-mobile.png' | asset_url }}"
+        alt="banner image">
+      <div class="btn-wraper banner-btn">
+        <a href="#" class="link-btn">
+          Weapon X is now live!
+          {% render 'right-angle-icon' %}
+        </a>
+      </div>
+      <div class="brand-logo">
+        <div class="brand-logo__indiego">
+          <img
+            class="brand-logo__indiego-img"
+            src="{{ 'indeogo-logo.png' | asset_url }}"
+            alt="">
+        </div>
+        <div class="brand-logo__funding">
+          <img
+            class="brand-logo__funding-img"
+            src="{{ 'crowdfunding.png' | asset_url }}"
+            alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Banner"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .banner {
+    padding: 64px 0;
+  }
+  .banner__img-box {
+    position: relative;
+
+    margin: auto;
+    display: grid;
+    place-items: center;
+    box-shadow: -4px 4px #EC1D25;
+    transform: skew(0.98turn, 360deg);
+  }
+  .banner-btn {
+    position: absolute;
+    transform: skew(0.98turn, 360deg);
+  }
+  .banner__img {
+    width: 100%;
+  }
+  .banner__img-mobile {
+    display: none;
+  }
+
+  .brand-logo {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) skew(0.98turn, 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .brand-logo__indiego,
+  .brand-logo__funding {
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform: skew(0.98turn, 360deg);
+  }
+  .brand-logo__funding-img,
+  .brand-logo__indiego-img {
+    position: absolute;
+    transform: skew(20deg, 360deg);
+  }
+  .brand-logo__indiego {
+    width: 175px;
+    height: 32px;
+    background: #010101;
+  }
+  .brand-logo__funding {
+    width: 212px;
+    height: 32px;
+    background: #0053ff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .customer-reviews__title--color {
+      padding: 6px 5px;
+    }
+    .banner__img {
+      display: none;
+    }
+    .banner__img-box {
+      height: auto;
+      width: 85%;
+    }
+    .banner__img-mobile {
+      display: block;
+      width: 100%;
+    }
+    .brand-logo {
+      width: 90%;
+    }
+    .banner-btn {
+      margin-bottom: 0;
+      margin-top: 247px;
+      position: absolute;
+      width: 100%;
+    }
+    .banner-btn .link-btn {
+      gap: 39px;
+    }
+    .brand-logo__indiego {
+      flex: 1;
+    }
+    .brand-logo__funding {
+      flex: 1;
+    }
+
+    .brand-logo__funding-img,
+    .brand-logo__indiego-img {
+      width: 86%;
+    }
+  }
+</style>

@@ -1,0 +1,236 @@
+{% liquid
+  assign img = section.settings.img
+%}
+
+<div class="ebike">
+  <div class="ebike__content">
+    <div class="ebike__img-box">
+      <img
+        class="ebike__img"
+        src="{{ img | img_url: 'master' }}"
+        alt="stelth-ebike">
+    </div>
+    <div class="ebike__details">
+      <p class="ebike__title-top">BEST SELLING EBIKE</p>
+      <h2 class="ebike__title">Babymaker II Stealth EBike</h2>
+      <h4 class="ebike__title-gray">STEALTHY, SLEEK AND FUN</h4>
+      <h4 class="ebike__sub-title">URBAN EBIKE</h4>
+      <p class="ebike__text">
+        Powered by an integrated battery and quiet rear hub motor, this bike is great for your daily commute or urban
+        adventure.
+      </p>
+      <ul class="ebike__list">
+        <li class="ebike__list-item">
+          <img src="{{ 'CheckCircle.svg' | asset_url }}" alt="">
+          Assembled in the USA
+        </li>
+        <li class="ebike__list-item">
+          <img src="{{ 'CheckCircle.svg' | asset_url }}" alt="">
+          Fully Integrated Battery
+        </li>
+        <li class="ebike__list-item">
+          <img src="{{ 'CheckCircle.svg' | asset_url }}" alt="">
+          Travels up to 70 miles in a single charge
+        </li>
+      </ul>
+
+      <div class="ebike__discount">
+        LIMITED TIME
+        <div class="ebike__save-price">
+          <span class="ebike__discount-color">Save $250</span>
+        </div>
+      </div>
+      <div class="ebike__price">
+        <span class="ebike__price-black">$1,749</span>
+        <span class="ebike__price-red">$1,499</span>
+      </div>
+
+      <div class="btn-wraper ebike__btn">
+        <a href="#" class="link-btn ">
+          LEARN MORE
+          {% render 'right-angle-icon' %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Featured Product"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Product"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .ebike {
+    padding: 50px 0;
+  }
+  .ebike__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ebike__img-box {
+    flex: 1;
+  }
+  .ebike__img {
+    width: 100%;
+  }
+  .ebike__details {
+    flex: 1;
+  }
+  .ebike__title-top {
+    display: inline-block;
+    padding: 7px 15px 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background: #0053ff;
+    transform: skew(0.95turn, 360deg);
+  }
+  .ebike__title {
+    width: 70%;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+  }
+  .ebike__title-gray {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    opacity: 0.6;
+  }
+  .ebike__sub-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 12px;
+  }
+  .ebike__text {
+    width: 70%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: #010101;
+    margin-bottom: 12px;
+  }
+  .ebike__list {
+    margin-bottom: 16px;
+  }
+  .ebike__list-item {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: #010101;
+    display: flex;
+    gap: 5px;
+  }
+  .ebike__discount {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #ec2028;
+    margin-bottom: 9px;
+  }
+  .ebike__save-price {
+    display: inline-block;
+    background: #ec2028;
+    margin-left: 17px;
+    padding: 3px 10px 6px;
+    transform: skew(0.95turn, 360deg);
+  }
+  .ebike__discount-color {
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .ebike__price {
+    margin-bottom: 16px;
+  }
+  .ebike__price-black {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    color: #010101;
+    position: relative;
+  }
+  .ebike__price-black::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: #ec2028;
+    transform: rotate(345deg);
+  }
+  .ebike__price-red {
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 100%;
+    color: #ec2028;
+    margin-left: 5px;
+  }
+  .ebike__btn {
+    max-width: 286px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ebike {
+      padding-top: 0;
+    }
+    .ebike__content {
+      flex-direction: column;
+      padding: 0 20px;
+      gap: 0;
+    }
+    .ebike__title {
+      width: 100%;
+    }
+    .ebike__text {
+      width: 100%;
+    }
+    .ebike__btn {
+      max-width: 286px;
+      width: 100%;
+    }
+  }
+</style>

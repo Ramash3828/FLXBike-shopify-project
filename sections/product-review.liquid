@@ -1,0 +1,177 @@
+<div class="products">
+  <div class="products__content">
+    <div class="products__item products__item--first">
+      <div class="products__img-box">
+        <img
+          class="products__img"
+          src="{{ 'product1.png'| asset_url }}"
+          alt="product image">
+      </div>
+      <h4 class="products__title">Babymaker II Stealth EBike™</h4>
+      <p class="products__price">$1749 now $1499
+        <span class="save-price">Save $250</span>
+      </p>
+      <div class="products__star">
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        <span class="review-count">112 reviews</span>
+      </div>
+    </div>
+    <div class="products__item">
+      <div class="products__img-box">
+        <img
+          class="products__img"
+          src="{{ 'product1.png'| asset_url }}"
+          alt="product image">
+      </div>
+      <h4 class="products__title">Babymaker II Stealth EBike™</h4>
+      <p class="products__price">$1749 now $1499
+        <span class="save-price">Save $250</span>
+      </p>
+      <div class="products__star">
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        <span class="review-count">112 reviews</span>
+      </div>
+    </div>
+    <div class="products__item">
+      <div class="products__img-box">
+        <img
+          class="products__img"
+          src="{{ 'product1.png'| asset_url }}"
+          alt="product image">
+      </div>
+      <h4 class="products__title">Babymaker II Stealth EBike™</h4>
+      <p class="products__price">$1749 now $1499
+        <span class="save-price">Save $250</span>
+      </p>
+      <div class="products__star">
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        {% render 'star' %}
+        <span class="review-count">112 reviews</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": {
+      "en": "Product-review"
+    },
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product-review"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  .products__content {
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .products__item {
+    text-align: center;
+    position: relative;
+  }
+  .products__img-box {
+    max-height: 343px;
+    overflow: hidden;
+  }
+  .products__item--first::after,
+  .products__item::after {
+    position: absolute;
+    content: "In Stock";
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 27px;
+    line-height: 27px;
+    background-color: #0053FF;
+    color: #fff;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.3px;
+    line-height: 15px;
+    letter-spacing: 0.45px;
+    display: grid;
+    place-items: center;
+  }
+
+  .products__item--first::after {
+    content: "Best Seller";
+    width: 100px;
+    background-color: #EC2028;
+  }
+  .products__img {
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .products__img-box:hover .products__img {
+    transform: scale(1.1);
+  }
+  .products__title {
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    color: #010101;
+  }
+  .products__price {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.3px;
+    line-height: 21px;
+    letter-spacing: 0.45px;
+    color: #010101;
+    margin-bottom: 10px;
+  }
+  .save-price {
+    color: #EC2028;
+  }
+  .products__star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+  }
+  .review-count {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.45px;
+    color: #010101;
+    margin-left: 5px;
+  }
+</style>

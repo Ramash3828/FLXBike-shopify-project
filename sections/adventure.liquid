@@ -1,0 +1,192 @@
+{% comment %} <div class="adventure">
+  <div class="page-width">
+    <div class="adventure__content-box">
+      <div class="adventure__content">
+        <h2 class="adventure__title">
+          <span class="adventure__title--color">POWER</span>
+          YOUR ADVENTURES
+        </h2>
+        <h4 class="adventure__sub-title">
+          We make bikes for
+          <span class="adventure__sub-title-color">ONE</span>
+          reason
+        </h4>
+        <p class="adventure__text">
+          With the mission of getting people out of cars and onto quality bikes, our founder Rob Rast dropped everything
+          and moved into a Chinese factory to create FLX Bike. His dedication paid off. ast forward a few years and FLX
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    has sold thousands of electric bikes around the world and was the most funded Indegogo campaign of 2020!
+        </p>
+
+        <div class="btn-wraper adventure-btn">
+          <a href="#" class="link-btn ">
+            READ OUR STORY
+            {% render 'right-angle-icon' %}
+          </a>
+        </div>
+      </div>
+      <div class="adventure-rictangle">
+        <div class="adventure__img-box">
+          <img
+            class="adventure__img"
+            src="{{ 'adventure.png' | asset_url }}"
+            alt="">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="badge">
+    <p class="badge__top-text">FLX BIKES</p>
+    <h2 class="badge__title">2020 MUST</h2>
+    <h3 class="badge__title-two">FOUNDED</h3>
+    <p class="badge__on">on</p>
+    <h3 class="badge__title-two">INDIEGOGO</h3>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Adventure"
+    },
+    "settings": [],
+    "presets": [
+      {
+        "name": "Adventure"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .adventure {
+    padding: 45px 0;
+    margin-top: 48px;
+    margin-bottom: 98px;
+    background: #F4F4F4;
+    position: relative;
+  }
+  .adventure__content-box {
+    display: flex;
+    gap: 50px;
+  }
+  .adventure__content {
+    flex: 1;
+  }
+  .adventure-rictangle {
+    flex: 1;
+    width: 50%;
+    position: absolute;
+    top: -57px;
+    right: 0;
+    overflow-x: hidden;
+    padding: 5px;
+  }
+
+  .adventure__img-box {
+    position: relative;
+    width: 100%;
+    box-shadow: -4px 4px #EC1D25;
+    transform: skew(0.99turn, 360deg);
+    margin-left: 50px;
+  }
+  .adventure__img {
+    display: block;
+    max-width: 700px;
+    height: auto;
+    transform: skew(0.0turn, 360deg);
+  }
+  .adventure__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+  }
+  .adventure__title--color {
+    color: #fff;
+    background-color: #EC2028;
+    line-height: 42px;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  .adventure__sub-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 22px;
+  }
+  .adventure__sub-title-color {
+    color: #EC2028;
+  }
+  .adventure__text {
+    max-width: 559px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: #010101;
+    margin-bottom: 20px;
+  }
+  .adventure-btn {
+    width: 286px;
+    background-color: #fff;
+
+  }
+  .btn-wraper {
+    position: relative;
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+    .adventure {
+      margin-bottom: 0;
+    }
+    .adventure__content {
+      width: 100%;
+    }
+    .adventure__content-box {
+      flex-direction: column;
+      gap: 0;
+    }
+    {% comment %}
+      .customer-reviews__details {
+        width: 67%;
+        margin-left: 85px;
+      }
+    {% endcomment %}
+
+    .adventure__text {
+      max-width: 100%;
+    }
+    .adventure-rictangle {
+      position: relative;
+      top: 100%;
+      overflow-x: visible;
+      width: 100%;
+    }
+    .adventure__img-box {
+      margin-left: 0;
+    }
+    .adventure__img {
+      display: block;
+      width: 100%;
+    }
+    .adventure-btn {
+      width: 100%;
+      position: relative;
+    }
+
+  }
+</style> {% endcomment %}

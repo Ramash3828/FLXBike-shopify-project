@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+	.content-width {
+		width: 90%;
+	}
+
+	.nav {
+		padding: 15px 0;
+	}
+	.nav__toggle-btn {
+		display: inline-flex;
+	}
+
+	.nav .nav__toggle-menu {
+		padding: 15px 0;
+		position: absolute;
+		background-color: #0079a5;
+		height: auto;
+		width: 250px;
+		top: 65px;
+		right: -250px;
+		display: flex;
+		align-items: flex-start;
+		z-index: 22;
+	}
+
+	.nav__menu {
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: 20px;
+		margin-left: 40px;
+	}
+}

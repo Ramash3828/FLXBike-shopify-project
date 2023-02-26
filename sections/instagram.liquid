@@ -1,0 +1,174 @@
+{% liquid
+  assign img = section.settings.img
+%}
+
+<div class="community">
+  <h2 class="community__title">JOIN OUR INSTAGRAM COMMUNITY</h2>
+  <h2 class="community__title-two">
+    Tag
+    <span class="community__title-red">@flx.bike</span>
+    if you’re a proud
+    <span class="community__title-red">#FLXBIKER</span>
+  </h2>
+
+  <div class="community__gallery">
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+    <div class="community__img-box">
+      <img
+        class="community__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Instagram"
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Posts"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .community {
+    padding: 96px 0;
+    background: #f4f4f4;
+    text-align: center;
+  }
+  .community__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 27px;
+  }
+  .community__title-two {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 34px;
+  }
+  .community__title-red {
+    background-color: #ec2028;
+    color: #fff;
+  }
+  .community__gallery {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-gap: 7px;
+  }
+  .community__img-box {
+  }
+  .community__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .community__gallery {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  }
+</style>

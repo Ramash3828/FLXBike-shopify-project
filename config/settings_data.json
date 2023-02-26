@@ -1,0 +1,26 @@
+{
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "on": true,
+          "text": "Don't miss out on our pre holiday sale"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "payment_enable": true
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

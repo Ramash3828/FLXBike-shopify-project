@@ -1,0 +1,152 @@
+{% liquid
+  assign img = section.settings.img
+%}
+
+<div class="riding">
+  <div class="riding__title">
+    What’s your
+    <span class="riding__title--red">Riding STyle?</span>
+  </div>
+
+  <div class="page-width">
+    <div class="riding__img-box">
+      <img
+        class="riding__img"
+        src="{{ img | img_url: 'master' }}"
+        alt=""
+      >
+      <div class="riding__btn-box">
+        <h2 class="riding__btn-title">urban e-bikes</h2>
+        <div class="btn-wraper riding__btn">
+          <a href="#" class="link-btn riding__btn-text">
+            VIEW COLLECTION
+            {% render 'right-angle-icon' %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Product-slider"
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product-slider"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .riding {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .riding__img-box {
+    box-shadow: -4px 4px #ec1d2566;
+    transform: skew(0.98turn, 360deg);
+    position: relative;
+    width: 100%;
+  }
+  .riding__img {
+    width: 100%;
+    z-index: -1;
+    position: relative;
+  }
+
+  .riding__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 42px;
+  }
+  .riding__title--red {
+    background-color: #ec2028;
+    color: #fff;
+    padding: 0 12px 10px;
+    display: inline-block;
+  }
+  .riding__btn-box {
+    padding: 18px;
+    background: #ffff00;
+    width: 392px;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) skew(0.95turn, 360deg);
+    left: 68px;
+    z-index: 22;
+  }
+  .riding__btn-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 12px;
+  }
+  .riding__btn {
+    max-width: 267px;
+    transform: unset;
+    background: #fff;
+  }
+  .riding__btn-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+  }
+
+  @media screen and (max-width: 768px) {
+    .riding__btn-box {
+      width: 350px;
+      left: 0;
+    }
+    .riding__img {
+      width: 100%;
+      z-index: -1;
+      position: relative;
+      min-height: 400px;
+      object-fit: fill;
+    }
+    .riding__img-box {
+      transform: unset;
+      min-height: 400px;
+    }
+    .riding__btn-box {
+      width: 87%;
+      transform: skew(0.95turn, 360deg);
+      left: 26px;
+    }
+    .riding__btn-title {
+      font-size: 28px;
+    }
+    .riding__btn {
+      max-width: 223px;
+    }
+    .riding__btn-text {
+      font-size: 14px;
+    }
+  }
+</style>

@@ -1,0 +1,113 @@
+{% liquid
+  assign hero_img = section.settings.hero_img
+  assign btn_label = section.settings.btn_label
+  assign button_link = section.settings.button_link
+  assign show_icon = section.settings.show_icon
+%}
+
+<div class="hero-content">
+  {% if hero_img %}
+    <img
+      class="hero-content__img"
+      src="{{ hero_img | img_url: 'master' }}"
+      alt="hero-image">
+    <img
+      class="hero-content__img-mobile"
+      src="{{ 'hero-mobile.png' | asset_url }}"
+      alt="hero-mobile-image">
+
+  {% else %}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-content__img' }}
+  {% endif %}
+
+  {% if btn_label != '' %}
+    <div class="hero-content__shadow"></div>
+    <div class="btn-wraper hero-btn">
+      <a href="{{ button_link }}" class="link-btn">
+        {{ btn_label }}
+        {% if show_icon %}
+          {% render 'right-angle-icon' %}
+        {% endif %}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Hero",
+
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_img",
+        "label": "Background Image"
+      }, {
+        "type": "text",
+        "id": "btn_label",
+        "label": "Button Label",
+        "default": "Black Friday Sales Start Now!",
+        "info": "Don't want? Keep blank."
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }, {
+        "type": "checkbox",
+        "id": "show_icon",
+        "label": "Show Icon",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .hero-content {
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-content__img {
+    width: 100%;
+    inset: 0;
+    z-index: -2;
+  }
+  .hero-btn {
+    position: absolute;
+  }
+  .hero-content__shadow {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    inset: 0;
+  }
+
+  .hero-content__img-mobile {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .hero-content__img-mobile {
+      display: block;
+      width: 100%;
+
+    }
+    .hero-content {
+      align-items: flex-end;
+
+
+    }
+    .hero-content__img {
+      display: none;
+    }
+    .btn-wraper {
+      margin-bottom: 48px;
+    }
+
+  }
+</style>

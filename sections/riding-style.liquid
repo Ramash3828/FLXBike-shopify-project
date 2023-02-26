@@ -1,0 +1,228 @@
+<div class="riding">
+  <div class="riding__title">
+    What’s your
+    <span class="riding__title--red">Riding STyle?</span>
+  </div>
+
+  <div class="page-width">
+    <div class="collection-slide">
+      <div class="collection-item">
+        <div class="riding__img-box">
+          <img
+            class="riding__img"
+            src="{{ 'riding-img.png' | asset_url }}"
+            alt="">
+
+        </div>
+        <div class="riding__btn-box">
+          <h2 class="riding__btn-title">urban e-bikes</h2>
+          <div class="btn-wraper riding__btn">
+            <a href="#" class="link-btn riding__btn-text">
+              VIEW COLLECTION
+              {% render 'right-angle-icon' %}
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="riding__img-box">
+          <img
+            class="riding__img"
+            src="{{ 'riding-img.png' | asset_url }}"
+            alt="">
+
+        </div>
+        <div class="riding__btn-box">
+          <h2 class="riding__btn-title">urban e-bikes</h2>
+          <div class="btn-wraper riding__btn">
+            <a href="#" class="link-btn riding__btn-text">
+              VIEW COLLECTION
+              {% render 'right-angle-icon' %}
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Riding Style"
+    },
+    "settings": [],
+    "presets": [
+      {
+        "name": "Riding Style"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .riding {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .collection-item {
+    position: relative;
+
+  }
+  .riding__img-box {
+    filter: drop-shadow(-4px 4px 0px #EC1D25);
+    transform: skew(0.99turn, 360deg);
+    overflow-x: hidden;
+    width: 90%;
+    margin: auto auto 7px;
+  }
+  .riding__img {
+    width: auto;
+    z-index: -1;
+    object-fit: cover;
+    transform: skew(0.01turn, 360deg);
+    margin-left: -20px;
+  }
+
+
+  .riding__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 42px;
+  }
+  .riding__title--red {
+    background-color: #EC2028;
+    color: #fff;
+    padding: 0 12px 10px;
+    display: inline-block;
+  }
+  .riding__btn-box {
+    position: absolute;
+    padding: 18px;
+    background: #FFFF00;
+    width: 392px;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%) skew(0.95turn, 360deg);
+    left: 135px;
+    z-index: 22;
+  }
+  .riding__btn-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 12px;
+  }
+  .riding__btn {
+    max-width: 267px;
+    transform: unset;
+    background: #fff;
+
+  }
+  .riding__btn-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+  }
+
+  .slick-next,
+  .slick-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) skew(0.97turn, 360deg);
+    z-index: 11;
+    background-color: #fff;
+    width: 56px;
+    height: 48px;
+    border: 2px solid #010101;
+    box-shadow: -4px 4px 0 rgba(1, 1, 1, 0.4);
+  }
+  .slick-prev {
+    left: 32px;
+
+  }
+  .slick-next {
+    right: 40px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    transform: skew(0.95turn, 360deg);
+    border-radius: unset;
+  }
+  .slick-prev:before {
+    content: url('{{ 'prev-icon.svg' | asset_url }}');
+  }
+  .slick-next:before {
+    content: url('{{ 'next-icon.svg' | asset_url }}');
+  }
+
+  .slick-dots li button:before {
+    width: 12px;
+    height: 12px;
+    content: '';
+    border: 2px solid #010101;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: .75;
+    background: #010101;
+  }
+
+  @media screen and (max-width: 768px) {
+    .riding {
+      padding: 0;
+    }
+    .riding__title {
+      line-height: 110%;
+      margin-bottom: 24px;
+    }
+    .riding__img {
+      width: 105%;
+      margin: 0 0 0 -6px;
+      display: block;
+    }
+    .riding__img-box {
+      transform: skew(0.99turn, 360deg);
+    }
+    .riding__btn-box {
+      position: relative;
+      width: 80%;
+      transform: skew(0.95turn, 360deg);
+      left: 26px;
+      top: 95%;
+      margin-bottom: 30px;
+      margin-top: -30px;
+    }
+    .riding__btn-title {
+      font-size: 22px;
+    }
+    .riding__btn {
+      max-width: 223px;
+      position: relative;
+      margin-bottom: 0;
+    }
+    .riding__btn-text {
+      font-size: 14px;
+    }
+    .slick-next,
+    .slick-prev {
+      top: 102%;
+    }
+
+  }
+</style>

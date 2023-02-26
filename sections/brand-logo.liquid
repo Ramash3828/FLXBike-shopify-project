@@ -1,0 +1,75 @@
+{% liquid
+  assign image = section.settings.image
+%}
+
+<div class="featured-logo">
+  <div class="page-width featured-logo__content">
+    <p class="featured-logo__text">Featured in:</p>
+    <div class="featured-logo__brand">
+      <a href="#">
+        <img src="{{ image | img_url: 'master' }}" alt="">
+      </a>
+    </div>
+    <div class="featured-logo__brand">
+      <a href="#">
+        <img src="{{ image | img_url: 'master' }}" alt="">
+      </a>
+    </div>
+    <div class="featured-logo__brand">
+      <a href="#">
+        <img src="{{ image | img_url: 'master' }}" alt="">
+      </a>
+    </div>
+    <div class="featured-logo__brand">
+      <a href="#">
+        <img src="{{ image | img_url: 'master' }}" alt="">
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Brand Logo"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .featured-logo {
+    padding: 26px 0;
+    background-color: #010101;
+  }
+
+  .featured-logo__content {
+    display: flex;
+    grid-gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featured-logo__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.6;
+  }
+</style>

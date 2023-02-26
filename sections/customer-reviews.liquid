@@ -1,0 +1,273 @@
+{% liquid
+  assign img = section.settings.img
+%}
+
+<div class="customer-reviews">
+  <div class="page-width">
+    <h2 class="customer-reviews__title">
+      What our customers
+      <span class="customer-reviews__title--color">say about us</span>
+    </h2>
+    <div class="customer-reviews__content">
+
+      <div class="customer-reviews__item">
+        <div class="customer-reviews__img-box">
+          <img
+            class="customer-reviews__img"
+            src="{{ img | img_url: 'master'}}"
+            alt="">
+        </div>
+        <div class="customer-reviews__details">
+          <div class="customer-reviews__heading-box">
+            <h4 class="customer-reviews__name">Troy S.</h4>
+            <div class="customer-reviews__star">
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+            </div>
+          </div>
+          <p class="customer-reviews__text">
+            “Best bike ive ever owned! first off ordering and delivery was a breeze. Customer service was great. this
+            bike is a masterpiece, well designed, fun to ride. I get a lot of attention. Now the whole family wants
+                                                                                                                                                                                                                                                                                                                                                                                         one!”
+          </p>
+        </div>
+      </div>
+      <div class="customer-reviews__item">
+        <div class="customer-reviews__img-box">
+          <img
+            class="customer-reviews__img"
+            src="{{ img | img_url: 'master' }}"
+            alt="">
+        </div>
+        <div class="customer-reviews__details">
+          <div class="customer-reviews__heading-box">
+            <h4 class="customer-reviews__name">Troy S.</h4>
+            <div class="customer-reviews__star">
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+            </div>
+          </div>
+          <p class="customer-reviews__text">
+            “Best bike ive ever owned! first off ordering and delivery was a breeze. Customer service was great. this
+            bike is a masterpiece, well designed, fun to ride. I get a lot of attention. Now the whole family wants
+                                                                                                      one!”
+          </p>
+        </div>
+      </div>
+      <div class="customer-reviews__item">
+        <div class="customer-reviews__img-box">
+          <img
+            class="customer-reviews__img"
+            src="{{ img | img_url: 'master' }}"
+            alt="">
+        </div>
+        <div class="customer-reviews__details">
+          <div class="customer-reviews__heading-box">
+            <h4 class="customer-reviews__name">Troy S.</h4>
+            <div class="customer-reviews__star">
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+            </div>
+          </div>
+          <p class="customer-reviews__text">
+            “Best bike ive ever owned! first off ordering and delivery was a breeze. Customer service was great. this
+            bike is a masterpiece, well designed, fun to ride. I get a lot of attention. Now the whole family wants
+                                                                                                      one!”
+          </p>
+        </div>
+      </div>
+      <div class="customer-reviews__item">
+        <div class="customer-reviews__img-box"><img
+            class="customer-reviews__img"
+            src="{{ img | img_url: 'master'}}"
+            alt="">
+        </div>
+        <div class="customer-reviews__details">
+          <div class="customer-reviews__heading-box">
+            <h4 class="customer-reviews__name">Troy S.</h4>
+            <div class="customer-reviews__star">
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+              {% render 'star' %}
+            </div>
+          </div>
+          <p class="customer-reviews__text">
+            “Best bike ive ever owned! first off ordering and delivery was a breeze. Customer service was great. this
+            bike is a masterpiece, well designed, fun to ride. I get a lot of attention. Now the whole family wants
+                                                                                                      one!”
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-wraper customer-btn">
+      <a href="#" class="link-btn ">
+        VIEW MORE
+        {% render 'angle-down-icon' %}
+      </a>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": {
+      "en": "Customer Reviews"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Customer Reviews"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  .customer-reviews {
+    padding-bottom: 100px;
+  }
+  .customer-reviews__title {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #010101;
+    margin-bottom: 43px;
+  }
+  .customer-reviews__title--color {
+    background-color: #ec2028;
+    color: #fff;
+    display: inline-block;
+    line-height: 42px;
+    padding: 11px 5px;
+  }
+  .customer-reviews__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+  .customer-reviews__item {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 65px;
+    align-items: center;
+    justify-content: center;
+  }
+  {% comment %}
+    .customer-reviews__img-box {
+      flex: 1;
+      filter: drop-shadow(-8px 8px 0px #000000);
+      transform: skewX(344deg);
+      justify-self: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .customer-reviews__img-box::after {
+      position: absolute;
+      content: url("{{ img | img_url: 'master'}}");
+      top: 0;
+      left: -19px;
+      transform: skewX(14deg);
+      transform-origin: center;
+    }
+  {% endcomment %}
+
+  .customer-reviews__img-box {
+    flex: 1;
+    filter: drop-shadow(-8px 8px 0px #000000);
+    transform: skewX(344deg);
+    justify-self: center;
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    height: 152px;
+  }
+  .customer-reviews__img {
+    width: 125%;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    transform: skewX(14deg);
+    transform-origin: center;
+    object-fit: cover;
+  }
+
+  .customer-reviews__details {
+    flex: 2;
+  }
+  .customer-reviews__heading-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .customer-reviews__name {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    color: #010101;
+  }
+  .customer-reviews__star {}
+  .customer-reviews__text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #010101;
+  }
+  .customer-btn {
+    width: 282px;
+    height: 52px;
+    margin: 50px auto auto;
+    background-color: #fff;
+  }
+  @media screen and (max-width: 768px) {
+    .customer-reviews {
+      padding-bottom: 0;
+    }
+    .customer-reviews__title {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    .customer-reviews__content {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .customer-reviews__item {
+      flex-direction: column;
+    }
+    .customer-reviews__img-box {
+      flex: 1;
+      align-self: flex-start;
+      margin-left: 30px;
+    }
+    .customer-reviews__details {
+      flex: 1;
+    }
+    .customer-btn {
+      width: 100%;
+      position: relative;
+    }
+  }
+</style>
